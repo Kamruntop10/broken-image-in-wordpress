@@ -1,0 +1,61 @@
+:root{
+    --wd: 500px;
+    --ht:500px;
+    --img:url('https://static.remove.bg/remove-bg-web/37843dee2531e43723b012aa78be4b91cc211fef/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg');
+}
+/*-----css for tab----*/
+@media screen and (max-width: 768px) {
+    :root{
+    --wd: 400px;
+    --ht:300px;
+}
+}
+/*-----css for phone----*/
+@media screen and (max-width: 360px) {
+    :root{
+    --wd: 100%;
+    --ht:300px;
+}
+}
+selector{
+    display: block;
+    width: var(--wd);
+    height: var(--ht);
+}
+selector span{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   background: var(--img);
+   background-size: cover;
+   background-position: left center;
+
+}
+selector span:nth-child(1){
+    clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
+    transition-delay: 0s;
+}
+selector span:nth-child(2){
+    clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
+    transition-delay: 0.25s;
+}
+selector span:nth-child(3){
+    clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
+    transition-delay: 0.5s;
+}
+selector span:nth-child(4){
+    clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+    transition-delay: 0.75s;
+}
+selector:hover span:nth-child(1){
+    transform: translate(-40px, -60px) rotate(-15deg)
+}
+selector:hover span:nth-child(2){
+    transform: translate(40px, -100px) rotate(25deg)
+}
+selector:hover span:nth-child(3){
+    transform: translate(-40px, 80px) rotate(15deg)
+}
+selector:hover span:nth-child(4){
+    transform: translate(40px, 80px) rotate(-15deg)
+}
